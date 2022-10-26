@@ -8,7 +8,6 @@ const Formulario = (props) => {
 
     const [nome, setNome] = useState('')
     const [endereco, setEndereco] = useState('')
-    const [cargo, setCargo] = useState('')
     const [quantidade, setQuantidade] = useState('')
     const [imagem, setImagem] = useState('')
     const [observacao, setObservacao] = useState('')
@@ -16,10 +15,9 @@ const Formulario = (props) => {
 
     const aoSalvar = (evento) => {
         evento.preventDefault()
-        props.aoColaboradorCadastrado({
+        props.aoPedidoCadastrado({
             nome,
             endereco,
-            cargo,
             imagem,
             quantidade,
             observacao,
@@ -27,7 +25,6 @@ const Formulario = (props) => {
         })
         setNome('')
         setEndereco('')
-        setCargo('')
         setImagem('')
         setQuantidade('')
         setObservacao('')
@@ -48,14 +45,14 @@ const Formulario = (props) => {
                 <CampoTexto
                     obrigatorio={true}
                     label="Endereço do cliente"
-                    placeholder="Digite o endereço(cargo/endereco)" 
+                    placeholder="Digite o endereço" 
                     valor={endereco}
                     aoAlterado={valor => setEndereco(valor)}
                 />
                 <CampoTexto
                     obrigatorio={true}
                     label="Quantidade de pizzas"
-                    placeholder="Digite a quantidade de pizzas(imagem)" 
+                    placeholder="Digite a quantidade de pizzas" 
                     valor={quantidade}
                     aoAlterado={valor => setQuantidade(valor)}
                 />

@@ -1,17 +1,17 @@
-.colaborador {
+.pedido {
     width: 280px;
 }
 
-.colaborador .cabecalho {
+.pedido .cabecalho {
     background-color:  #F0F0F0;
     border-radius: 10px 10px 0px 0px;
 }
-.colaborador img {
+.pedido img {
     width: 100px;
     bottom: -50px;
 }
 
-.colaborador .rodape {
+.pedido .rodape {
     background: #FFFFFF;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
     border-radius: 0px 0px 10px 10px;
@@ -19,7 +19,7 @@
     padding-bottom: 40px;
 }
 
-.colaborador .rodape h4 {
+.pedido .rodape h4 {
     color: #000000;
     font-size: 18px;
     line-height: 22px;
@@ -27,16 +27,32 @@
     margin-bottom: 8px;
 }
 
-.colaborador .rodape h5 {
+.pedido .rodape h5 {
     font-size: 18px;
     line-height: 22px;
     color: #212121;
     padding: 0 16px;
 }
 
-.colaborador .rodape h6 {
+.pedido .rodape h6 {
     font-size: 18px;
     line-height: 22px;
     color: #212121;
     padding: 0 16px;
+}
+
+.botao {
+    background-color: #d81919;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 32px;
+    border: none;
+    cursor: pointer;
+    color: #FFF;
+    margin: 32px 0;
+}
+
+.botao:hover {
+    color: #424242;
 }

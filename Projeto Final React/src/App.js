@@ -17,12 +17,12 @@ function App() {
       corSecundaria: ''
     },
     {
-      nome: 'Presuntaço',
+      nome: 'Presunto',
       corPrimaria: 'black',
       corSecundaria: ''
     },
     {
-      nome: 'Mussalera',
+      nome: 'Mussarela',
       corPrimaria: 'black',
       corSecundaria: ''
     },
@@ -37,31 +37,31 @@ function App() {
       corSecundaria: ''
     },
     {
-      nome: 'Frango c/ requeijasso',
+      nome: 'Frango com Catupiry',
       corPrimaria: 'black',
       corSecundaria: ''
     }
   ]
 
-  const [colaboradores, setColaboradores] = useState([])
+  const [pedidos, setPedidos] = useState([])
 
-  const aoNovoColaboradorAdicionado = (colaborador) => {
-    debugger
-    setColaboradores([...colaboradores, colaborador])
+  const aoNovoPedidoAdicionado = (pedido) => {
+    setPedidos([...pedidos, pedido])
   }
 
   return (
     <div className="App">
       <Banner />
-      <Formulario times={sabores.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
+      <Formulario times={sabores.map(time => time.nome)} aoPedidoCadastrado={pedido => aoNovoPedidoAdicionado(pedido)}/>
 
       {sabores.map(sabor => <Time 
-        key={sabor.nome} 
-        nome={sabor.nome} 
-        corPrimaria={sabor.corPrimaria} 
-        corSecundaria={sabor.corSecundaria} 
-        colaboradores={colaboradores.filter(colaborador => colaborador.sabor === sabor.nome)}
-      />)}   
+        key={sabor.nome}
+        nome={sabor.nome}
+        corPrimaria={sabor.corPrimaria}
+        corSecundaria={sabor.corSecundaria}
+        pedidos={pedidos.filter(pedido => pedido.sabor === sabor.nome)}
+      />
+      )}
 
     </div>
   );

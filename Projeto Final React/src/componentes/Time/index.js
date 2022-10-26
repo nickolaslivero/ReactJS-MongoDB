@@ -1,22 +1,35 @@
-import Colaborador from '../Colaborador'
+import Pedido from '../Pedido'
 import './Time.css'
 
 const Time = (props) => {
     const css = { backgroundColor: props.corSecundaria }
+
+    function onClickDelete(col_index) {
+        let col = []
+    
+        props.pedidos.map((pedido, index) => {
+            if (index !== col_index) {
+                col.unshift(pedido)
+            }
+        })
+    
+        console.log(col)
+    }
+     
     return (
-        (props.colaboradores.length > 0) ? <section className='time' style={css}>
-            <div className='colaboradores'>
-                {props.colaboradores.map( colaborador => <Colaborador corDeFundo={props.corPrimaria} 
-                key={colaborador.nome} 
-                nome={colaborador.nome} 
-                endereco={colaborador.endereco} 
-                //imagem={colaborador.imagem} 
-                sabor={colaborador.sabor}
-                quantidade={colaborador.quantidade}
-                observacao = {colaborador.observacao}
-                /> )}
+        (props.pedidos.length > 0) ? <section className='time' style={css}>
+            <div className='pedidos'>
+                {props.pedidos.map( (pedido, index) => <Pedido corDeFundo={props.corPrimaria} 
+                key={index}
+                nome={pedido.nome}
+                endereco={pedido.endereco}
+                sabor={pedido.sabor}
+                quantidade={pedido.quantidade}
+                observacao = {pedido.observacao}
+                onClickDelete = {() => onClickDelete(index)}
+                />)}
             </div>
-        </section> 
+        </section>
         : ''
     )
 }
