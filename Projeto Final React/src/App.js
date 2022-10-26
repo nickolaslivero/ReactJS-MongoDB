@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Banner from './componentes/Banner';
 import Formulario from './componentes/Formulario';
-import Time from './componentes/Time';
+import Card from './componentes/Card';
 
 function App() {
 
@@ -52,9 +52,9 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <Formulario times={sabores.map(time => time.nome)} aoPedidoCadastrado={pedido => aoNovoPedidoAdicionado(pedido)}/>
+      <Formulario cards={sabores.map(card => card.nome)} aoPedidoCadastrado={pedido => aoNovoPedidoAdicionado(pedido)}/>
 
-      {sabores.map(sabor => <Time 
+      {sabores.map(sabor => <Card 
         key={sabor.nome}
         nome={sabor.nome}
         corPrimaria={sabor.corPrimaria}

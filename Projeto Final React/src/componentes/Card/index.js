@@ -1,7 +1,7 @@
 import Pedido from '../Pedido'
-import './Time.css'
+import './Card.css'
 
-const Time = (props) => {
+const Card = (props) => {
     const css = { backgroundColor: props.corSecundaria }
 
     function onClickDelete(col_index) {
@@ -15,9 +15,9 @@ const Time = (props) => {
     
         console.log(col)
     }
-     
+
     return (
-        (props.pedidos.length > 0) ? <section className='time' style={css}>
+        (props.pedidos.length > 0) ? <section className='card' style={css}>
             <div className='pedidos'>
                 {props.pedidos.map( (pedido, index) => <Pedido corDeFundo={props.corPrimaria} 
                 key={index}
@@ -34,4 +34,4 @@ const Time = (props) => {
     )
 }
 
-export default Time
+export default Card

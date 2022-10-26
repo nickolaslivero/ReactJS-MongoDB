@@ -66,7 +66,7 @@ const Formulario = (props) => {
                 <ListaSuspensa
                     obrigatorio={true}
                     label="Sabor da pizza" 
-                    itens={props.times}
+                    itens={props.cards}
                     valor={sabor}
                     aoAlterado={valor => setSabor(valor)}
                 />
